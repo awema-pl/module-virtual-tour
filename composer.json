@@ -1,6 +1,6 @@
 {
     "name": "awema-pl/module-virtual-tour",
-    "description": ":description",
+    "description": "Module virtual tour.",
     "type": "library",
     "license": "MIT",
     "authors": [
