@@ -1,0 +1,109 @@
+$pin-size = .75rem
+$pin-triangle-side = $pin-size / 1.732
+
+.tooltip-pin
+    box-sizing: border-box
+    padding: $pin-size
+    position: absolute
+    width: 350px
+    max-width: 100%
+    opacity: 0
+    transition: opacity 150ms
+
+    &:not(.is-center):after
+        position: absolute
+        content: ''
+        display: block
+        box-sizing: border-box
+        height: .75rem
+        width: .75rem
+        border-top: $pin-size solid $tooltip-bg
+        border-left: $pin-triangle-side solid transparent
+        border-right: $pin-triangle-side solid transparent
+
+    &.is-visible
+        opacity: 1
+        transition: opacity 200ms ease-out
+
+    &.is-left
+        &:after
+            right: 0
+            top: 50%
+            margin-top: -1 * $pin-triangle-side
+            transform: rotate(-90deg)
+
+    &.is-right
+        &:after
+            left: 0
+            top: 50%
+            margin-top: -1 * $pin-triangle-side
+            transform: rotate(90deg)
+
+    &.is-top
+        &:after
+            bottom: 0
+            left: 50%
+            margin-left: -1 * $pin-triangle-side
+
+    &.is-bottom
+        &:after
+            top: 0
+            left: 50%
+            margin-left: -1 * $pin-triangle-side
+            transform: rotate(180deg)
+
+    &.is-center
+        position: fixed
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+
+
+    &__inner
+        background-color: $tooltip-bg
+        position: relative
+        transform: scale(.95)
+        transition: transform 150ms
+
+        ^[0].is-visible &
+            transition: transform 250ms ease-out
+            transform: none
+
+        ^[0].is-left &
+            transform-origin: right center
+
+        ^[0].is-right &
+            transform-origin: left center
+
+
+        ^[0].is-top &
+            transform-origin: center bottom
+
+        ^[0].is-bottom &
+            transform-origin: center top
+
+    &__close
+        appearance: none
+        cursor: pointer
+        background-color: transparent
+        padding: 0
+        margin: 0
+        border: none
+        opacity: 0.5
+
+        position: absolute
+        top: .5rem
+        right: .5rem
+
+        svg
+            width: .8rem
+            height .8rem
+
+            path
+                vector-effect: non-scaling-stroke
+                stroke-width: 1.5px
+                stroke: darken($tooltip-bg, 50%)
+
+        &:hover,
+        &:focus
+            opacity 1

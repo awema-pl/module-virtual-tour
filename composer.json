@@ -1,0 +1,47 @@
+{
+    "name": "awema-pl/module-virtual-tour",
+    "description": ":description",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Karol Golec",
+            "email": "karolgolec10@gmail.com",
+            "homepage": "https://github.pl/awema-pl/module-virtual-tour",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "karolgolec10@gmail.com"
+    },
+    "homepage": "https://github.com/awemapl/formbuilder",
+    "keywords": [
+        "Laravel",
+        "VirtualTour"
+    ],
+    "require": {
+        "illuminate/support": "~5|~6|~7|~8|~9"
+    },
+    "autoload": {
+        "psr-4": {
+            "AwemaPL\\VirtualTour\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AwemaPL\\VirtualTour\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit --colors=always"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AwemaPL\\VirtualTour\\VirtualTourServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
