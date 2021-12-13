@@ -1,6 +1,6 @@
 /**
  * Bundle of AWEMA virual-tour
- * Generated: 2020-11-05 00:20:22
+ * Generated: 2021-12-11 14:57:26
  * Version: 1.2.0
  */
 
